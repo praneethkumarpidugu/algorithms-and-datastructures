@@ -8,34 +8,43 @@
 //   reverseInt(-15) === -51
 //   reverseInt(-90) === -9
 
-function reverseInt(n) {
-  correctSign = Math.sign(n)
-  reversedInt = '';
-  if(correctSign == 1){
-    for(let number of n.toString().split(''))
-      {
-        if(Math.sign(number) == 0){
-          continue
-        }
-        reversedInt = number + reversedInt;
-      }
-    return parseInt(reversedInt);
-  }
-  else if (correctSign == -1)
-  {
-    for(let number of n.toString().split(''))
-      {
-        if(Math.sign(number) == 0){
-          continue
-        }
-        reversedInt = number + reversedInt;
-  }
+// function reverseInt(n) {
+//   correctSign = Math.sign(n)
+//   reversedInt = '';
+//   if(correctSign == 1){
+//     for(let number of n.toString().split(''))
+//       {
+//         if(Math.sign(number) == 0){
+//           continue
+//         }
+//         reversedInt = number + reversedInt;
+//       }
+//     return parseInt(reversedInt);
+//   }
+//   else if (correctSign == -1)
+//   {
+//     for(let number of n.toString().split(''))
+//       {
+//         if(Math.sign(number) == 0){
+//           continue
+//         }
+//         reversedInt = number + reversedInt;
+//   }
+//
+//     return parseInt(reversedInt) * correctSign;
+//   } else {
+//     return n;
+//   }
+//
+// }
 
-    return parseInt(reversedInt) * correctSign;
-  } else {
-    return n;
-  }
+// Solution # 2
 
+function reverseInt(n)
+{
+  reversed = n.toString().split('').reverse().join('');
+
+  return parseInt(reversed)*Math.sign(n);
 }
 
 module.exports = reverseInt;
